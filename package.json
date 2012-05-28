@@ -1,0 +1,7 @@
+{
+  "author": "mattinsler <mattinsler@gmail.com>",
+  "name": "caboose-model-before-action",
+  "description": "Caboose plugin that adds pre-fab before_action helpers for caboose-model models to controllers",
+  "version": "0.0.1",
+  "main": "index"
+}
