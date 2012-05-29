@@ -8,6 +8,20 @@
 
     $ caboose plugin install caboose-model-before-action
 
+## Usage
+
+```coffeescript
+import 'User'
+import 'ApplicationController'
+
+class UsersController extends ApplicationController
+  fetch_model_before_action User, only: 'show'
+
+  show: ->
+    # @user is already fetched
+    @render()
+```
+
 ## License
 
 (The MIT License)
