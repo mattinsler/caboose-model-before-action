@@ -18,11 +18,11 @@ module.exports =
           execute: (model, options) ->
             model = Caboose.get(model) if typeof model is 'string'
             @before_action ((next) ->
-              id = @params["#{model._short_name}_id"] || @params.id
+              id = @params["#{model.__short_name__}_id"] || @params.id
               model.where(_id: id).first (err, value) =>
                 return next(err) if err?
-                return next(new Error("Could not find #{model._name} #{id}")) unless value?
-                @[model._short_name] = value
+                return next(new Error("Could not find #{model.__name__} #{id}")) unless value?
+                @[model.__short_name__] = value
                 next()
             ), options
   }
